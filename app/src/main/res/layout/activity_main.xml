@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/etname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="true"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:hint="Enter ur name "
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+    <EditText
+        android:id="@+id/etnumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:hint="Enter ur number "
+        android:layout_marginTop="5dp"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+    <EditText
+        android:id="@+id/etdept"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter ur depertment "
+        android:inputType="text"
+        android:textStyle="bold|italic"
+        android:layout_marginTop="5dp"
+        android:textSize="30sp"
+        android:textAlignment="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="2"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:text="Save"
+            android:onClick="clickSave"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:onClick="viewData"
+            android:text="View"/>
+
+
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/viewData"
+            android:textAlignment="center"
+            android:textSize="20dp"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+</LinearLayout>

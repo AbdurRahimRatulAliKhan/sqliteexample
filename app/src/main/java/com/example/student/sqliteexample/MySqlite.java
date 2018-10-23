@@ -88,5 +88,10 @@ public class MySqlite extends SQLiteOpenHelper
 
                return cursor;
     }
+    public int delete(String id){
+        SQLiteDatabase database = getWritableDatabase();
+        return database.delete(TABLE_NAME,  COL_ID + " = ? " , new String[]{id});
+
+    }
 
 }

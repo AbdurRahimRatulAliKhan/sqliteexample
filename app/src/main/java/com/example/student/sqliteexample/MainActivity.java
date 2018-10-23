@@ -1,5 +1,6 @@
 package com.example.student.sqliteexample;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -62,28 +63,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void viewData(View view) {
-        MySqlite mySqlite = new MySqlite(this);
-        Cursor cursor = mySqlite.getData();
-
-        StringBuffer stringBuffer = new StringBuffer();
-
-        if (cursor.getCount()>0) {
-
-
-            while (cursor.moveToNext()) {
-                stringBuffer.append(cursor.getString(0)).append(" , ");
-                stringBuffer.append(cursor.getString(1)).append(" , ");
-                stringBuffer.append(cursor.getString(2)).append(" , ");
-                stringBuffer.append(cursor.getString(3)).append(" \n\n ");
-
-            }
-
-            tvShowData.setText(stringBuffer);
-        }
-
-
-        else {
-            tvShowData.setText("No data found");
-        }
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
     }
 }

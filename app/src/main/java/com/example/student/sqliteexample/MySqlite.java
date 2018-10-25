@@ -94,4 +94,14 @@ public class MySqlite extends SQLiteOpenHelper
 
     }
 
+    public int updateData (String id, String name, String dept, String number){
+        SQLiteDatabase database = getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COL_NAME, name);
+        values.put(COL_DEPT, dept);
+        values.put(COL_NUMBER, number);
+
+        return database.update(TABLE_NAME, values, COL_ID + " ==? ", new String[]{id});
+    }
+
 }
